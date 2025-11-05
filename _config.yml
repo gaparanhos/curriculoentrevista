@@ -1,0 +1,23 @@
+# GitHub Pages Configuration
+title: Combo - Currículo & Entrevista + Salto Quântico na Carreira
+description: Página de vendas para o combo de e-books de desenvolvimento profissional
+theme: jekyll-theme-minimal
+
+# SEO
+lang: pt-BR
+author: Seu Nome
+email: seu-email@exemplo.com
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files from build
+exclude:
+  - .gitignore
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock

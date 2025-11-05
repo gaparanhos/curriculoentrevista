@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo: Currículo & Entrevista + Salto Quântico na Carreira</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .hero .tagline {
+            font-size: 1.1em;
+            margin-top: 20px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #764ba2;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        /* Problem Section */
+        .problem {
+            background-color: #fff;
+        }
+
+        .problem p {
+            font-size: 1.15em;
+            color: #555;
+        }
+
+        /* Combo Table */
+        .combo-section {
+            background-color: #fff;
+        }
+
+        .combo-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .combo-table th {
+            background-color: #667eea;
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .combo-table td {
+            padding: 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .combo-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .combo-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .combo-table tr:hover {
+            background-color: #f0f1ff;
+        }
+
+        /* Target Audience */
+        .audience {
+            background-color: #f8f9fa;
+        }
+
+        .audience-item {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .audience-item strong {
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        /* Features List */
+        .features {
+            background-color: #fff;
+        }
+
+        .feature-group {
+            margin-bottom: 40px;
+        }
+
+        .feature-group h3 {
+            margin-top: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.15em;
+            margin-bottom: 30px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            border: 2px solid #ff6b6b;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Bonus Section */
+        .bonus {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 30px;
+            border-radius: 4px;
+            margin: 40px 0;
+        }
+
+        .bonus h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        .bonus p {
+            color: #856404;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: #f8f9fa;
+        }
+
+        .faq-item {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95em;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            .combo-table th,
+            .combo-table td {
+                padding: 12px;
+                font-size: 0.95em;
+            }
+
+            .cta-button {
+                padding: 15px 40px;
+                font-size: 1em;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        /* Emphasis */
+        strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        em {
+            color: #764ba2;
+            font-style: italic;
+        }
+
+        /* Link styling */
+        a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Blockquote */
+        blockquote {
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #666;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        /* Spacing */
+        .spacing {
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>🚀 Dê o Salto Quântico na Sua Carreira</h1>
+            <p class="subtitle">O Combo Definitivo para Emprego e Ascensão Profissional</p>
+            <p class="tagline">Currículo & Entrevista + Salto Quântico na Carreira</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Problem Section -->
+        <section class="problem">
+            <h2>Cansado de Enviar Currículos e Não Ser Chamado?</h2>
+            <p><strong>Você está a um passo de transformar sua frustração em sucesso profissional.</strong></p>
+            <p>Se você está buscando um <strong>novo emprego</strong> ou sonha em <strong>subir de cargo</strong> e alcançar um salário que realmente valorize seu potencial, este combo foi feito para você.</p>
+            <p>A verdade é que o mercado de trabalho mudou. Não basta ser bom; é preciso saber se <strong>posicionar, negociar e liderar</strong> sua própria trajetória.</p>
+        </section>
+
+        <!-- Combo Section -->
+        <section class="combo-section">
+            <h2>Apresentamos o Combo: Currículo & Entrevista + Salto Quântico na Carreira</h2>
+            <p>Dois e-books essenciais que se complementam para cobrir <strong>toda a sua jornada profissional</strong>, desde a conquista da vaga até a liderança de alto desempenho.</p>
+            
+            <table class="combo-table">
+                <thead>
+                    <tr>
+                        <th>E-book</th>
+                        <th>Foco Principal</th>
+                        <th>O que você vai aprender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Currículo e Entrevista</strong></td>
+                        <td>Conquista Imediata da Vaga</td>
+                        <td>Criar um <strong>currículo vencedor</strong> focado em resultados; Dominar a <strong>entrevista</strong> com o Método STAR; Estratégias de follow-up que garantem a contratação.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Salto Quântico na Carreira</strong></td>
+                        <td>Ascensão e Liderança de Alto Nível</td>
+                        <td>Desenvolver <strong>visão estratégica</strong> e liderança; Dominar a <strong>negociação salarial</strong> com o BATNA; Aplicar o <strong>Princípio de Pareto (80/20)</strong> para produtividade máxima; Construir um <strong>Networking de Valor</strong>.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Target Audience -->
+        <section class="audience">
+            <h2>🎯 Para Quem é Este Combo?</h2>
+            
+            <div class="audience-item">
+                <strong>Para quem busca emprego:</strong>
+                <p>Pare de ser ignorado. Aprenda a fazer seu currículo "vender" seu valor em 6 segundos e a brilhar em qualquer entrevista.</p>
+            </div>
+
+            <div class="audience-item">
+                <strong>Para quem busca promoção:</strong>
+                <p>Saia da estagnação. Descubra as estratégias de líderes de alto desempenho para aumentar seu valor no mercado e conquistar o cargo e o salário que você merece.</p>
+            </div>
+        </section>
+
+        <!-- Reading Time -->
+        <section class="problem">
+            <h2>⏱️ Leitura Rápida, Resultados Imediatos</h2>
+            <p>Sabemos que seu tempo é valioso. Por isso, ambos os e-books são de <strong>leitura rápida e objetiva</strong>, focados em <strong>estratégias práticas e acionáveis</strong>. Sem enrolação, apenas o conhecimento estratégico que você precisa para aplicar hoje mesmo e ver a diferença.</p>
+            
+            <blockquote>
+                <p><strong>O e-book "Currículo e Entrevista" é o seu guia prático de 9 páginas para a contratação.</strong></p>
+                <p><strong>O e-book "Salto Quântico na Carreira" é o seu manual de 17 páginas para a aceleração profissional.</strong></p>
+            </blockquote>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <h2>O Que Você Vai Dominar com Este Combo</h2>
+
+            <div class="feature-group">
+                <h3>Pilar 1: A Conquista da Vaga</h3>
+                <ul class="feature-list">
+                    <li>A <strong>Fórmula Mágica de Vendas</strong> para o seu currículo: Ação + Resultado + Impacto.</li>
+                    <li>O <strong>Método STAR</strong> para responder a qualquer pergunta comportamental na entrevista.</li>
+                    <li>As <strong>Dicas de Ouro</strong> para um currículo de alto impacto (formato, concisão e revisão implacável).</li>
+                </ul>
+            </div>
+
+            <div class="feature-group">
+                <h3>Pilar 2: A Ascensão Profissional</h3>
+                <ul class="feature-list">
+                    <li>O <strong>Planejamento de Carreira</strong> com OKRs (Objetivos e Resultados-Chave) para metas ambiciosas.</li>
+                    <li>A <strong>Negociação Salarial Estratégica</strong> usando o BATNA para maximizar seus ganhos.</li>
+                    <li>Como desenvolver a <strong>Visão Estratégica</strong> e a <strong>Liderança Situacional</strong> para se destacar.</li>
+                    <li>Técnicas de <strong>Produtividade Acelerada</strong> (Deep Work e GTD) para focar no que realmente importa.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Bonus -->
+        <section>
+            <div class="bonus">
+                <h3>🎁 Bônus Exclusivo: O Plano de Ação 30 Dias</h3>
+                <p>Ao adquirir o combo, você ganha o desafio prático de 30 dias do e-book "Salto Quântico", que transforma o conhecimento em <strong>ações concretas</strong> para iniciar sua transformação imediatamente.</p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>🔒 Sua Oportunidade de Investir em Você: OFERTA EXCLUSIVA</h2>
+            <p style="color: white;">Chega de esperar que as coisas aconteçam. <strong>Tome as rédeas da sua carreira agora.</strong></p>
+            <p>Este combo é o atalho que os profissionais de sucesso usam para acelerar seus resultados.</p>
+            <p style="font-size: 1.4em; color: #ff6b6b; font-weight: bold; margin: 20px 0;">De R$ 84,90 por apenas <span style="font-size: 1.3em;">R$ 22,00</span>!</p>
+            <p style="font-size: 1.2em; color: white; font-weight: bold; background-color: #ff6b6b; padding: 15px 20px; border-radius: 8px; margin: 20px 0;">✨ É a sua chance de transformar sua carreira por um valor simbólico! ✨</p>
+            <p><strong>Clique no botão abaixo e garanta o seu acesso imediato ao Combo Definitivo para o Sucesso Profissional!</strong></p>
+            <div class="spacing"></div>
+            <a href="https://pay.kiwify.com.br/43UPfor" class="cta-button">QUERO DAR O SALTO NA MINHA CARREIRA AGORA!</a>
+            <div class="spacing"></div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <h2>Dúvidas Frequentes</h2>
+
+            <div class="faq-item">
+                <strong>1. Os e-books são muito longos?</strong>
+                <p>Não! Eles foram desenhados para serem <strong>leituras rápidas e diretas ao ponto</strong>, focadas em estratégias que você pode aplicar imediatamente.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>2. O conteúdo é teórico ou prático?</strong>
+                <p>Totalmente prático. Cada capítulo contém <strong>Ações Práticas</strong> e <strong>Fórmulas</strong> (como o STAR e o BATNA) para aplicação imediata.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>3. Há garantia de satisfação?</strong>
+                <p>Sua satisfação é nossa prioridade. Se os e-books não atenderem às suas expectativas, você terá a opção de reembolso conforme a política da plataforma Kiwify.</p>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section style="text-align: center; padding: 60px 0;">
+            <h2>Não deixe sua carreira ao acaso</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px;"><strong>O seu próximo nível começa aqui.</strong></p>
+            <a href="https://pay.kiwify.com.br/43UPfor" class="cta-button">CLIQUE AQUI E TRANSFORME SEU FUTURO PROFISSIONAL</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Combo de E-books: Currículo & Entrevista + Salto Quântico na Carreira</p>
+        <p>Link de Checkout: <a href="https://pay.kiwify.com.br/43UPfor">https://pay.kiwify.com.br/43UPfor</a></p>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
